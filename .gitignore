@@ -1,0 +1,6 @@
+kube-apiserver.log
+kube-controller-manager.log
+kubelet.log
+kube-proxy.log
+kube-scheduler.log
+

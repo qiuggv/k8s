@@ -6,10 +6,13 @@ metadata:
     name: redis-master
 spec:
   replicas: 1
+  #rc如何找到里面的pod，通过查找label来实现，查找label的name属性为redis-master的pod
   selector:
     name: redis-master
+  #pod模板，用于指定pod相关信息
   template:
     metadata:
+      #pod指定一个labels，名字为redis-master
       labels:
         name: redis-master
     spec:
