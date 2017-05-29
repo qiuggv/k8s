@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: centos-iptables
+  labels:
+    name: centos-iptables
+spec:
+  replicas: 2
+  selector:
+    name: centos-iptables
+  template:
+    metadata:
+      labels:
+        name: centos-iptables
+    spec:
+      containers:
+      - name: worker
+        image: csphere/centos-iptables:7.1
+        ports:
+        - containerPort: 22

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: ketty-origin
+  labels:
+    name: ketty-origin
+spec:
+  replicas: 1
+  selector:
+    name: ketty-origin
+  template:
+    metadata:
+      labels:
+        name: ketty-origin
+    spec:
+      containers:
+      - name: worker
+        image: 10.142.90.21:8555/ketty:201705191802
+        ports:
+        - containerPort: 8777
