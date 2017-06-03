@@ -8,6 +8,9 @@ spec:
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
   # type: LoadBalancer
+  # 如何对外访问？
+  # 指定对外的访问类型是NodePort，那么会在每个node上面设置该端口，这个是一个host机的端口
+  type: NodePort
   ports:
     # the port that this service should serve on
     - port: 80
